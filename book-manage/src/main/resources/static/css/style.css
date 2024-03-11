@@ -1,0 +1,257 @@
+@font-face {
+font-family: 'kodomo';
+src: url("/fonts/KodomoRounded.otf") format("opentype");
+}
+
+/* 共通 */
+
+body {
+  background: #fff7ea;
+  min-width: 1080px;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) and (min-width: 1px) {
+  body {
+    min-width: 100%;
+  }
+}
+
+/* header */
+header {
+  height: 72px;
+  background: #fff;
+}
+
+header .inner  {
+  padding: 0 0 0 20px;
+}
+
+header .inner .grep {
+  display: flex;
+  align-items: center;
+  min-height: 72px;
+}
+
+header .inner .grep .logo {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+}
+
+header .inner .grep .logo img {
+  width: 52px;
+}
+
+header .inner .grep .logo h1 {
+  margin-left: 12px;
+  color: #8B7164;
+  font-family: "kodomo";
+}
+
+header .inner .grep .grep_menu {
+  display: flex;
+  column-gap: 24px;
+  margin-left: 24px;
+}
+
+header .inner .grep .block {
+
+}
+
+header .inner .grep .block a {
+  text-decoration: none;
+  color: #8B7164;
+  font-family: "kodomo";
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) and (min-width: 1px) {
+  header {
+    height: 60px;
+  }
+
+  header .inner {
+  }
+
+  header .inner .grep {
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+  }
+
+  header .inner .grep .logo {
+    margin-left: 0;
+  }
+
+  header .inner .grep .logo img {
+    width: 42px;
+  }
+
+  header .inner .grep .logo h1 {
+    font-size: 28px;
+  }
+
+  header .inner .grep .grep_menu {
+    display: none;
+  }
+}
+
+/* sec_card */
+.sec_card {
+  width: 1080px;
+  margin: 0 auto;
+}
+
+.sec_card .inner {
+  padding: 60px 20px 80px;
+}
+
+.sec_card h2 {
+  font-size: 40px;
+  color: #8B7164;
+  font-family: "kodomo";
+  text-align: center;
+}
+
+.sec_card .inner .addition {
+  text-align: right;
+  margin-top: 0.5em;
+}
+
+.sec_card .inner .addition a {
+  font-size: 30px;
+  color: #8B7164;
+  font-family: "kodomo";
+  text-align: center;
+}
+
+.sec_card .grep {
+  margin-top: 43px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.sec_card .card-body {
+  border: 2px solid #8B7164;
+  border-radius: 8px;
+  width: 220px;
+  height: 220px;
+  margin: 20px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.sec_card .card-body .card-title {
+  color: #8B7164;
+  font-weight: bold;
+  font-size: 20px;
+  min-height: 8em;
+}
+
+.sec_card .card-body .card-text {
+  color: #8B7164;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) and (min-width: 1px) {
+  .sec_card {
+    width: 100%;
+  }
+
+  .sec_card .inner {
+    padding: 40px 20px 80px;
+  }
+
+  .sec_card h2 {
+    font-size: 34px;
+    color: #8B7164;
+    font-family: "kodomo";
+    text-align: center;
+  }
+
+  .sec_card .grep {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(220px, 1fr));
+  }
+
+  .sec_card .card-body {
+  /* flex-grow: 1; */
+    margin: 10px;
+    width: auto;
+  }
+}
+
+/* form */
+form {
+  width: 100%;
+  max-width: 1080px;
+  margin: 6em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form .title_input,
+form .price_input {
+  max-width: 400px;
+  width: 100%;
+}
+
+form .price_input {
+  margin-top: 2em;
+}
+
+form .title_input label,
+form .price_input label {
+  display: block;
+  font-size: 34px;
+  color: #8B7164;
+  font-family: "kodomo";
+  text-align: center;
+}
+
+form .title_input input,
+form .price_input input  {
+  background: #fff;
+  border: none;
+  height: 50px;
+  width: 100%;
+  margin-top: 1em;
+  border-radius: 8px;
+}
+
+
+form .btn-primary {
+  margin-top: 4em;
+  font-size: 34px;
+  color: #fff;
+  font-family: "kodomo";
+  text-align: center;
+  border: none;
+  padding: 0.4em 0 0.6em;
+  max-width: 300px;
+  width: 100%;
+  border-radius: 8px;
+  background: #8e8176;
+}
+
+@media screen and (max-width: 768px) and (min-width: 1px) {
+  form {
+    width: 100%;
+    margin: 3em auto;
+  }
+
+  form .btn-primary {
+    margin-top: 3em;
+  }
+}

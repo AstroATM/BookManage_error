@@ -1,0 +1,207 @@
+/* ハンバーガーメニュー */
+@media (min-width: 769px) {
+  header .burger {
+    display: none;
+  }
+}
+
+header .burger {
+  width: 72px;
+  height: 72px;
+  background: #fff;
+  position: relative;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+header .burger .openbtn-area {
+  transition: all .6s;
+  width: 72px;
+  height: 72px;
+}
+
+header .burger span {
+  display: inline-block;
+  position: absolute;
+  right: 25px;
+  height: 2px;
+  border-radius: 2px;
+  background: #7b5d50;
+  width: 30px;
+}
+
+header .burger span:nth-of-type(1) {
+  top: 21px;
+}
+
+header .burger span:nth-of-type(2) {
+  top: 32px;
+}
+
+header .burger span:nth-of-type(3) {
+  top: 44px;
+  width: 19px;
+}
+
+/*activeクラスが付与されると .openbtn-areaが360度回転し、その中の線が回転して×に*/
+.burger.active .openbtn-area {
+  transform: rotate(360deg);
+}
+
+header .burger.active span:nth-of-type(1) {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  width: 45%;
+  height: 3px;
+}
+
+.burger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+header .burger.active span:nth-of-type(3) {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  width: 45%;
+  height: 3px;
+}
+
+/* 右上のグロナビ */
+#g-nav.panelactive {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+/*丸の拡大*/
+.circle-bg {
+  position: fixed;
+  z-index: 3;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+  transform: scale(0);
+  right: -50px;
+  top: -50px;
+  transition: all .6s;
+}
+
+.circle-bg.circleactive {
+  transform: scale(50);
+  /*クラスが付与されたらscaleを拡大*/
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav-list {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#g-nav.panelactive #g-nav-list {
+  display: block;
+  /*クラスが付与されたら出現*/
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+  opacity: 0;
+  /*はじめは透過0*/
+  /*ナビゲーション天地中央揃え※レイアウトによって調整してください。不必要なら削除*/
+  position: absolute;
+  z-index: 999;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+}
+
+/*背景が出現後にナビゲーションを表示*/
+#g-nav.panelactive ul {
+  opacity: 1;
+}
+
+/* 背景が出現後にナビゲーション li を表示※レイアウトによって調整してください。不必要なら削除*/
+#g-nav.panelactive ul li {
+  animation-name: gnaviAnime;
+  animation-duration: 1s;
+  animation-delay: .2s;
+  /*0.2 秒遅らせて出現*/
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes gnaviAnime {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/*リストのレイアウト設定*/
+#g-nav li {
+  text-align: center;
+  list-style: none;
+}
+
+#g-nav li a {
+  color: #8B7164;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-family: "kodomo";
+  font-size: 20px;
+}
+
+/* 背景をスクロールさせない */
+body.noScroll {
+  height: 100%;
+  overflow: hidden;
+}
+
+
+@media screen and (max-width: 768px) and (min-width: 1px) {
+  header .burger {
+    width: 60px;
+    height: 60px;
+  }
+
+  header .burger .openbtn-area {
+    width: 60px;
+    height: 60px;
+  }
+
+  header .burger span {
+    right: 18px;
+    width: 25px;
+  }
+
+  header .burger span:nth-of-type(1) {
+    top: 18px;
+  }
+
+  header .burger span:nth-of-type(2) {
+    top: 29px;
+  }
+
+  header .burger span:nth-of-type(3) {
+    top: 40px;
+    width: 14px;
+  }
+
+}
